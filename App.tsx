@@ -1,3 +1,5 @@
+import { StatusBar } from 'react-native'
+
 import {
   useFonts,
   Ubuntu_700Bold,
@@ -21,7 +23,14 @@ export default function App(){
     return <Loading />
   }
 
-  return <Home />
+  return(
+    <>
+      <StatusBar barStyle={'light-content'}
+      backgroundColor={"transparent"}
+      translucent/>
+      <Home />
+    </>
+  )
 }
 
 // import { StatusBar } from 'expo-status-bar';
