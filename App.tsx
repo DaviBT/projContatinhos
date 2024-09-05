@@ -7,6 +7,7 @@ import {
 } from '@expo-google-fonts/ubuntu'
 
 import {Home} from '@/app/home';
+import { Loading } from '@/app/loading';
 
 export default function App(){
 
@@ -17,7 +18,7 @@ export default function App(){
   })
 
   if(!fontsLoaded){
-    return
+    return <Loading />
   }
 
   return <Home />
