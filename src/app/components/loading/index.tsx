@@ -1,5 +1,4 @@
 import { ActivityIndicator } from "react-native"
-
 import { styles } from './styles'
 import { theme } from "@/themes"
 
