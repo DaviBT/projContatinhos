@@ -8,7 +8,7 @@ export function Home(){
     return(
         <View style={styles.container}>
             <View style={styles.header}>
-                <Input>
+                <Input style={styles.input}>
                 <Feather name="search" size={16} color={theme.colors.gray_300}></Feather>
                 <Input.Field placeholder='Pesquisar pelo nome...' />
                 <Feather name="x" size={16} color={theme.colors.gray_300}></Feather>

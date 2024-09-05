@@ -2,8 +2,8 @@ import { View, TextInput, TextInputProps, ViewProps } from "react-native";
 import { styles } from './styles'
 import { theme } from "@/themes"
 
-function Input({ children }: ViewProps ){
-    return <View style={styles.container}>{children}</View>
+function Input({ children, style }: ViewProps ){
+    return <View style={[styles.container, style]}>{children}</View>
 }
 
 function Field( {...rest}: TextInputProps ){

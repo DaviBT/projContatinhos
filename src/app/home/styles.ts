@@ -10,5 +10,9 @@ export const styles = StyleSheet.create({
         height: 132,
         backgroundColor:theme.colors.blue,
         justifyContent: "flex-end",
+        paddingHorizontal: 24, /*para deslocar os cantos */
+    },
+    input: {
+        marginBottom: 27, /*metade da altura do input, ficando, assim, na entrelinha */
     },
 })

@@ -15,5 +15,6 @@ export const styles = StyleSheet.create({
             flex:1,
             color: theme.colors.black,
             fontSize: 16,
+            fontFamily: theme.fontFamily.regular,
         }
 })
