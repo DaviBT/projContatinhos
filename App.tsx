@@ -1,6 +1,25 @@
+import {
+  useFonts,
+  Ubuntu_700Bold,
+  Ubuntu_500Medium,
+  Ubuntu_400Regular,
+  Ubuntu_700Bold_Italic
+} from '@expo-google-fonts/ubuntu'
+
 import {Home} from '@/app/home';
 
 export default function App(){
+
+  const[fontsLoaded] = useFonts({
+    Ubuntu_700Bold,
+    Ubuntu_500Medium,
+    Ubuntu_400Regular
+  })
+
+  if(!fontsLoaded){
+    return
+  }
+
   return <Home />
 }
 
