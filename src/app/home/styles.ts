@@ -3,7 +3,8 @@ import { theme } from "@/themes/index"
 
 export const styles = StyleSheet.create({
     container:{
-        flex: 1
+        flex: 1,
+        backgroundColor: theme.colors.gray_200,
     },
     header: {
         width:"100%",
@@ -13,6 +14,6 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 24, /*para deslocar os cantos */
     },
     input: {
-        marginBottom: 27, /*metade da altura do input, ficando, assim, na entrelinha */
+        marginBottom: -27, /*metade da altura do input, ficando, assim, na entrelinha */
     },
 })
