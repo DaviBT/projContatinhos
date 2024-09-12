@@ -14,7 +14,7 @@ type SectionListDataProps = {
 
 async function fetchContacts(){
     try{
-        const [contacts, setContacts] = useState<SectionListDataProps[]>([])
+        
         const { status } = await Contacts.requestPermissionsAsync()
         if(status === Contacts.PermissionStatus.GRANTED){
             const { data } = await Contacts.getContactsAsync()
@@ -31,7 +31,7 @@ async function fetchContacts(){
 
 export function Home(){
 
-    const [contacts, setContacts] = useState([])
+    const [contacts, setContacts] = useState<SectionListDataProps[]>([])
 
     const [name, setName] = useState("")
 
