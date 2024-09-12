@@ -1,16 +1,20 @@
-import { Alert, View } from 'react-native'
+import { Alert, View, SectionList, Text, SectionListComponent } from 'react-native'
 import { styles } from './styles'
 import { Input } from '@/app/components/input'
 import { Feather } from '@expo/vector-icons'
 import { theme } from "@/themes"
-
 import * as Contacts from 'expo-contacts'
 import { useState, useEffect } from 'react'
-import { Contact } from '../components/contact'
+import { Contact, ContactProps } from '@/app/components/contact'
 
-/**/
+type SectionListDataProps = {
+    title: string
+    data: ContactProps /* Contato já tipado*/
+}
+
 async function fetchContacts(){
     try{
+        const [contacts, setContacts] = useState<SectionListDataProps[]>([])
         const { status } = await Contacts.requestPermissionsAsync()
         if(status === Contacts.PermissionStatus.GRANTED){
             const { data } = await Contacts.getContactsAsync()
@@ -26,6 +30,9 @@ async function fetchContacts(){
 /**/
 
 export function Home(){
+
+    const [contacts, setContacts] = useState([])
+
     const [name, setName] = useState("")
 
     useEffect(() => {
@@ -45,6 +52,22 @@ export function Home(){
                 name: "Conor",
                 image: require("@/assets/avatar.jpeg")
             }}/>
+
+            <SectionList 
+                sections={[{title: "R", data:[{id:"1", name:"Heloísa"}] }]}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                    <Contact contact={{
+                        name:item.name,
+                        image: require("@/assets/avatar.jpeg")
+                    }} 
+                    />
+                )}
+                renderSectionHeader={({ section }) => 
+                    (<Text style={styles.section}>{section.title}</Text>)}
+                contentContainerStyle = {styles.contentList}
+            />
+
         </View>
     )
 }
